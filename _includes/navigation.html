@@ -1,0 +1,24 @@
+<nav>
+	<a class="nav-toggle" id="open-nav" href="#">&#9776;</a>
+	{% for link in site.data.navigation %}
+		{% assign class = "" %}
+		{% assign target = "" %}
+		{% assign style = "" %}
+		{% if link.highlight %}
+			{% assign class = class | append: "highlight" %}
+		{% endif %}
+
+		{% if link.target %}
+			{% assign target = target | append: link.target %}
+		{% endif %}
+
+		{% if link.style %}
+		    {% assign style = style | append: link.style %}
+	    {% endif %}
+
+		{% if link.link == page.url %}
+			{% assign class = class | append: " active" %}
+		{% endif %}
+		<a href="{% include relative-src.html src=link.link %}" style="{{ style }}" target="{{ target }}" class="{{ class }}" {% if link.new_window %}target="_blank"{% endif %}>{{ link.name }}</a>
+	{% endfor %}
+</nav>

@@ -1,0 +1,16 @@
+- name: Home
+  link: /
+- name: Overview
+  link: /overview/
+- name: Rates
+  link: /rates/
+- name: Gallery
+  link: /gallery/
+- name: Contact
+  link: /contact/
+- name: Things To Do
+  link: /blog/  
+- name: Book Now!
+  link: https://google.com
+  target: _blank
+  style: "background-color: red;"
